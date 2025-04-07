@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hulu Awesome App</title>
-    <style>
-      body {
+<!doctype html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Hulu Awesome App</title><style>body {
         background-color: #141414;
         overflow: hidden;
         font-family: Graphik, Helvetica, Arial, sans-serif;
@@ -40,7 +33,7 @@
       }
 
       .carousel-delimiter {
-        height: 100%;
+        height: 370px;
         width: 0px;
         border: 1px solid gray;
         margin: 0 10px;
@@ -54,21 +47,41 @@
         margin: 5px;
         border-radius: 14px;
       }
-      .tile.focused {
+      .tile-outer.focused .tile {
         box-shadow: 0 0 0 6px orange;
       }
 
-      .tile img {
+      .tile-outer img {
         transition: all 0.3s ease-in-out;
-        width: 97%;
-        height: 97%;
+        width: 96%;
+        height: 96%;
         object-fit: cover;
         border-radius: 13px;
       }
 
-      .tile.focused img {
+      .tile-outer.focused img {
+        transition: all 0.3s ease-in-out;
         width: 100%;
         height: 100%;
+      }
+
+      .tile-outer .title, .tile-outer .subtitle {
+        display: none;
+        color: white;
+        white-space: nowrap;
+        width: 200px;
+      }
+
+      .tile-outer.focused .title{
+        display: block;
+        font-size: 24px;
+        padding: 10px 10px 0;
+      }
+
+      .tile-outer.focused .subtitle{
+        display: block;
+        font-size: 16px;
+        padding: 5px 10px;
       }
 
       .modal {
@@ -76,8 +89,8 @@
         position: fixed;
         top: 50%;
         left: 50%;
-        width: 1100;
-        height: 620;
+        width: 1100px;
+        min-height: 620px;
         background-color: rgba(0, 0, 0);
         transform: translate(-50%, -50%);
         align-items: center;
@@ -97,8 +110,8 @@
       }
 
       .modal img {
-        max-width: 100%;
-        max-height: 90%;
+        width: 1100px;
+        height: 620px;
         border-radius: 8px;
       }
 
@@ -159,14 +172,4 @@
 
       button.focused {
         background-color: orange; /* Darker shade on hover */
-      }
-    </style>
-  </head>
-  <body>
-    <div class="page" id="app"></div>
-    <div class="overlay" id="overlay"></div>
-    <div id="modal"></div>
-    <script src="./dist/bundle.js"></script>
-    <script></script>
-  </body>
-</html>
+      }</style><script defer="defer" src="dist/bundle.js"></script></head><body><div class="page" id="app"></div><div class="overlay" id="overlay"></div><div id="modal"></div></body></html>
