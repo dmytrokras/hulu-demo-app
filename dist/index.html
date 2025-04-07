@@ -1,0 +1,175 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Hulu Awesome App</title><style>body {
+        background-color: #141414;
+        overflow: hidden;
+        font-family: Graphik, Helvetica, Arial, sans-serif;
+      }
+
+      .page {
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.5s ease;
+      }
+
+      .carousel-container {
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        position: relative;
+        padding: 10px 50px;
+      }
+
+      .carousel-inner {
+        display: flex;
+        transition: transform 0.5s ease;
+      }
+
+      .carousel-header {
+        color: #fff;
+        font-size: 24px;
+        font-weight: 600;
+        text-transform: uppercase;
+        padding-left: 60px;
+        letter-spacing: 1px;
+      }
+
+      .carousel-delimiter {
+        height: 370px;
+        width: 0px;
+        border: 1px solid gray;
+        margin: 0 10px;
+      }
+
+      .tile {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease-in-out;
+        margin: 5px;
+        border-radius: 14px;
+      }
+      .tile-outer.focused .tile {
+        box-shadow: 0 0 0 6px orange;
+      }
+
+      .tile-outer img {
+        transition: all 0.3s ease-in-out;
+        width: 96%;
+        height: 96%;
+        object-fit: cover;
+        border-radius: 13px;
+      }
+
+      .tile-outer.focused img {
+        transition: all 0.3s ease-in-out;
+        width: 100%;
+        height: 100%;
+      }
+
+      .tile-outer .title, .tile-outer .subtitle {
+        display: none;
+        color: white;
+        white-space: nowrap;
+        width: 200px;
+      }
+
+      .tile-outer.focused .title{
+        display: block;
+        font-size: 24px;
+        padding: 10px 10px 0;
+      }
+
+      .tile-outer.focused .subtitle{
+        display: block;
+        font-size: 16px;
+        padding: 5px 10px;
+      }
+
+      .modal {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 1100px;
+        min-height: 620px;
+        background-color: rgba(0, 0, 0);
+        transform: translate(-50%, -50%);
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        border-radius: 10px;
+        transition: all 0.3s ease-in-out;
+        z-index: 1000;
+        padding: 10px;
+      }
+
+      .modal.active {
+        display: flex;
+        flex-direction: column;
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1); /* Reset scaling */
+      }
+
+      .modal img {
+        width: 1100px;
+        height: 620px;
+        border-radius: 8px;
+      }
+
+      .modal .title {
+        margin-top: 15px;
+        margin-right: auto;
+        padding-left: 35px;
+        font-size: 30px;
+        font-weight: bold;
+        font-weight: bold;
+        color: white;
+        text-transform: uppercase;
+      }
+
+      .description {
+        padding: 10px 35px;
+        margin-right: auto;
+        margin-top: 15px;
+        font-size: 18px;
+        color: white;
+      }
+
+      .overlay {
+        display: none; /* Hidden by default */
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+        z-index: 999; /* Ensure it sits beneath the modal */
+        transition: opacity 0.3s ease; /* Smooth fade-in effect */
+        opacity: 0;
+      }
+
+      .overlay.active {
+        display: block; /* Make both modal and overlay visible */
+        opacity: 1; /* Fade in */
+      }
+
+      .modal-buttons {
+        display: flex;
+        justify-content: space-around; /* Space buttons evenly */
+        margin-top: 15px; /* Add space above the buttons */
+      }
+
+      .modal button {
+        padding: 10px 20px;
+        margin: 5px 5px 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: white; /* Default button color */
+        color: black;
+        font-size: 14px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      button.focused {
+        background-color: orange; /* Darker shade on hover */
+      }</style><script defer="defer" src="bundle.js"></script></head><body><div class="page" id="app"></div><div class="overlay" id="overlay"></div><div id="modal"></div></body></html>
